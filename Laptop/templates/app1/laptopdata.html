@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+
+
+{% block c1 %}
+
+
+<div class="container"><div class="jumbotron">
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Lid</th>
+      <th scope="col">Brand_Name</th>
+      <th scope="col">Price</th>
+      <th scope="col">ROM</th>
+            <th scope="col">RAM</th>
+      <th scope="col">SSD</th>
+      <th scope="col">HDD</th>
+      <th scope="col">WEIGHT</th>
+            <th scope="col">YEAR</th>
+
+    </tr>
+  </thead>
+  <tbody>
+
+{% for i in data %}
+
+    <tr>
+      <td>{{i.lid}}</td>
+      <td>{{i.brand_name}}</td>
+      <td>{{i.price}}</td>
+            <td>{{i.rom}}</td>
+            <td>{{i.ram}}</td>
+      <td>{{i.ssd}}</td>
+      <td>{{i.hdd}}</td>
+      <td>{{i.weight}}</td>
+            <td>{{i.year}}</td>
+
+            <td><button class="btn btn-success"><a href="{% url 'update' i.id %}">Edit</a></button></td>
+      <td><button class="btn btn-danger"><a href="{% url 'delete' i.id %}">Delete</a></button></td>
+
+
+
+
+    </tr>
+
+  {% endfor %}
+
+  </tbody>
+</table>
+</div>
+</div>
+
+
+
+{% endblock %}

@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+
+{% load crispy_forms_tags %}
+{% block c1 %}
+
+<div class="container">
+    <div class="jumbotron">
+
+        <form method="post">
+
+        {% csrf_token %}
+
+
+            <input type="text" placeholder="username" name="un" required class="form-control">
+            <br>
+
+            <input type="password" placeholder="password" name="pw" required class="form-control">
+
+            <br>
+
+            {% if messages %}
+
+            {% for i in messages %}
+
+            <h5>{{i}}</h5>
+
+            {% endfor %}
+            {% endif %}
+
+        <input type="submit" value="login" class="btn btn-info">
+
+
+
+
+
+
+
+
+        </form>
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
+
+{% endblock %}

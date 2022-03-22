@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+
+{% block c1 %}
+
+<div>
+
+    <div>
+
+        <form method="post">
+            {% csrf_token %}
+
+
+            <h1>Are you sure to delete record </h1>
+
+            <input type="submit" class="btn btn-danger" value="Yes">
+            <button class="btn btn-success"><a href="{% url 'laptopdata' %}" >No</a></button>
+
+
+
+
+
+
+        </form>
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
+
+
+{% endblock %}
